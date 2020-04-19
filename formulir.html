@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title> Formulir </title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="form-validation.css" rel="stylesheet">
+</head>
+	<body>
+		<h4 align = "center"><strong>Formulir Pendaftaran UKM</strong></h4>
+		<p align="center" class="mb-5">Harap isi dengan data yang sesuai!</p>
+		<div class="row">
+			<div class="col-md-6 order-md-2">
+				<form class="needs-validation container" id="connection" name="connection" action="data.php" method="post">
+					<div class="col-sm-15">
+						<label for="nama_lengkap">Nama Lengkap</label><br />
+						<input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Sesuai Kartu identitas" value="">
+						<label for="panggilan">Panggilan</label>
+						<input type="text" name="panggilan" id="panggilan" class="form-control" placeholder="Tidak harus" value="">	
+					</div><br />
+					<div class="form-group row">
+						<label for="Username" class="col-sm-2 col-form-label">Username</label>
+						<div class="col-md-5">
+							<input type="text" name="Username" id="Username" class="form-control" placeholder="Nama pengguna">	
+						</div>
+					</div><br />
+					<div class="form-group row">
+						<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" name="inputEmail3" id="inputEmail3" placeholder="you@example.com">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="Password" class="col-sm-2 col-form-label">Password</label>
+						<div class="col-sm-10">
+							<input type="Password" name="Password" id="Password" class="form-control">
+						</div>
+					</div>
+					<br />
+					<div class="form-group row">
+						<label for="inputAddress" class="col-sm-2 col-form-label">Alamat</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" name="inputAddress" id="inputAddress" placeholder="1234 Main St">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="cc-number" class="col-sm-2 col-form-label">No Telp </label>
+						<div class="col-sm-10">
+							<input type="text" name="ccnumber" class="form-control" id="cc-number" placeholder="+62...">
+						</div>
+					</div>
+					<div class="form row">
+						<div class="col-md-7 mb-3">
+							<label for="UnitKegiatan" class="col-form-label">Unit Kegiatan</label>
+				    	<select class="custom-select my-1 mr-sm-2" name="UnitKegiatan" id="UnitKegiatan" >
+				    		<option selected>Choose</option>
+							<option value="UKM-K">UKM Kewirausahaan</option>
+							<option value="UKM-S">UKM Senior</option>
+							<option value="UKM-B">UKM Bahasa</option>
+							<option value="UKM-SB">UKM Sepak Bola</option>
+							<option value="KSR">KSR PNUP</option>
+							<option value="Karate">Karate</option>
+							<option value="Taekwondo">Taekwondo</option>
+							<option value="Silat">Pencak Silat</option>
+							<option value="Mapala">Mapala PNUP</option>
+						</select>
+						</div>
+						<div class="col-md-5 mb-3">
+						    <label for="Jurusan" class="col-form-label">Jurusan</label>
+						    <select class="custom-select my-1 mr-sm-2" name="Jurusan" id="Jurusan">
+						    	<option selected> Choose</option>
+						    	<option value="Elektro">Jurusan Teknik Elektro</option>
+						    	<option value="Mesin">Jurusan Teknik Mesin</option>
+						    	<option value="Sipil">Jurusan Teknik Sipil</option>
+						    	<option value="Kimia">Jurusan Teknik Kimia</option>
+						    	<option value="Akuntansi">Jurusan Akuntansi</option>
+						    	<option value="Administrasi Bisnis">Jurusan Administrasi Bisnis</option>
+						    </select>
+						</div>
+					</div>
+					<label>Jenis Kelamin</label>
+					<div class="form-check">
+						<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Laki-laki
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Perempuan
+						</label>
+					</div><br />
+					<div class="col-md-6 mb-3">
+						<label for="foto" class="col-sm">Unggah foto diri</label>
+						<br />
+						<input type="file" class="form-control" name="foto" id="foto" accept="image/*">
+					</div>
+					
+				
+					<hr class="mb-4">
+					<button id="create" name="action" value="create" class="btn btn-primary btn-lg" type="submit">kirim</button>
+					<button id="update" name="action" value="update" class="btn btn-info btn-lg" type="submit">ubah</button>
+					<button id="read" name="action" value="read" class="btn btn-success btn-lg" type="submit">cari</button>
+					<button id="delete" name="action" value="delete" class="btn btn-danger btn-lg" type="submit">hapus</button>
+				</form>
+				
+			</div>	
+		</div>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery.dataTables.min.js"></script>
+	    <script src="js/popper.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+		<script src="async.js"></script>
+		<script type="text/javascript">
+			$("#connection").submit(kirimdata);
+			$(".tresult").dataTable();
+		</script>
+		
+	
+</body>
+</html>
